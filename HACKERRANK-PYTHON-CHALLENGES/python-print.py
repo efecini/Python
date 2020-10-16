@@ -29,3 +29,9 @@ Sample Output 0
 123
 """
 
+if __name__ == '__main__':
+    n = int(input())
+    result = f""
+    for item in range(1, n+1):
+        result += str(item)
+    print(result

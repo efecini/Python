@@ -36,6 +36,7 @@ Explanation 0
 1990 is not a multiple of 4 hence it's not a leap year.
 """
 
+"""
 # Flat is better than nested. Can we make it more flat?
 def is_leap(year):
     leap = False
@@ -46,6 +47,13 @@ def is_leap(year):
             if not year%400:
                 leap = True
     return leap
+"""
+
+#This is elegant code. Always search for relevant python library first.
+import calendar
+
+def is_leap(year):
+    return calendar.isleap(year)
 
 year = int(input())
 print(is_leap(year))

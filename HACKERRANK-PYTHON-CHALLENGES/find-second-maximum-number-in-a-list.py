@@ -27,6 +27,7 @@ if __name__ == '__main__':
     n = int(input())
     arr = map(int, input().split())
     lis = []
+    #Do not need to make an equation here. Just write the object in front
     [lis.append(obj) for obj in arr if obj not in lis]
     lis.sort(reverse=True)
     print(lis[1])

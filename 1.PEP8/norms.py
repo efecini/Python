@@ -1,34 +1,35 @@
-# PEP8 Norms
+# PEP8 NORMS
 
-#Guido Van Rossum: "The code is read much more often than it is written."
+# Guido Van Rossum: "The code is read much more often than it is written"
 
-#Variables
-#Use lowercase letters and underscores to separate words
+# Variables
+# Use lowercase letters and underscores to separate words
 my_var = 4
 
-#Functions
-#Use lowercase letters and underscores to separate words.
+# Functions
+# Use lowercase letters and underscores to separate words
 def my_func():
     print("Hello")
 
-#Classes
-#Capitalize the first letter of each word — called CapWords or CamelCase.
+# Classes
+# Capitalize the first letter of each word — called CapWords or CamelCase
 class MyClass:
     x = 5
 
-#Constants
-#All capital letters and underscores to separate words.
+# Constants
+# All capital letters and underscores to separate words
 PI_CONSTANT = 3.14
 
-#Indentations
+# Indentations
 # 4 blanks or 1 tab
 
-#Avoid using overly abbreviated names such as fn; write out first_name instead.
-#Never use lowercase ‘L’, uppercase ‘O’, or uppercase ‘I’ as variable names, they are too easily confused with a 1 or 0.
+# Avoid using overly abbreviated names such as fn; write out first_name instead
+# Never use lowercase ‘L’, uppercase ‘O’, or uppercase ‘I’ as variable names
+# They are too easily confused with a 1 or 0
 
-#Use those when list or arguement is long.
+#Use those when list or arguement is long
 
-result = my_function(
+def result = my_function(
     first_argument, second_argument,
     third_argument, fourth_argument)
 
@@ -43,16 +44,16 @@ my_list = [
     4, 5, 6,
 ]
 
-#Use whitespace to communicate order of operations.
-#x = 2*y + 2*z
+# Use whitespace to communicate order of operations
+x = 2*y + 2*z
 
-"""
-Keep lines under 79 characters
-Use double quotes for strings with an apostrophe.
-Use single quotes for strings with quotation marks.
-Always use double quotes for multiline strings.
-"""
 
+# Keep lines under 79 characters
+# Use double quotes for strings with an apostrophe
+# Use single quotes for strings with quotation marks
+# Always use double quotes for multiline strings
+
+# Calculation Orders
 # Don't
 b = a ** 2 + 10
 c = (a + b) * (a - b)
@@ -60,22 +61,24 @@ c = (a + b) * (a - b)
 b = a**2 + 10
 c = (a+b) * (a-b
 
-#Docstrings
+# Docstrings give information when hover on function in IDE
 def quadratic_formula(x, y, z, t):
     """Using the quadratic formula"""
     print("I'm in a def.")
 
+# Lists
 # Do
 list = [1, 2, 3]
 # Don't
 list = [ 1, 2, 3, ]
 
+# Don't leave blanks if there is no element at the array
 # Do
 spam = (1,)
 # Don't
 spam = (1, )
 
-#Empty List is considered Falsy
+# Empty List is considered Falsy. So use them in True/False expression directly.
 # Don't
 list_value = []
 if not len(list_value):
@@ -85,7 +88,7 @@ list_value = []
 if not list_value:
     print('LIST IS EMPTY')
 
-#StringSlicing
+# Use startswith/endswith in stringslicing
 # Do
 if foo.startswith('cat'):
 # Don't
@@ -99,10 +102,14 @@ if file_jpg[-3:] == 'jpg':
 if file_jpg.endswith('jpg'):
     print('It is a JPEG image file')
 
-#Linter: pycodestyle: https://pypi.org/project/pycodestyle/
-#AutoFormatters: Black: https://pypi.org/project/black/
+# Linter: pycodestyle:
+# https://pypi.org/project/pycodestyle/
 
-#Do
+# AutoFormatters: Black:
+# https://pypi.org/project/black/
+
+# Multi Line Additions
+# Do
 income = (gross_wages
 
          + taxable_interest
@@ -112,7 +119,7 @@ income = (gross_wages
          - ira_deduction
       
          - student_loan_interest)
-#Don't
+# Don't
 income = (gross_wages +
 
          taxable_interest +
@@ -123,38 +130,30 @@ income = (gross_wages +
       
          student_loan_interest)
 
-#Do
+# Don't use extra spaces
+# Do
 spam(ham[1], {eggs: 2})
-#Don't
+# Don't
 spam( ham[ 1 ], { eggs: 2 } )
 
-#Do
-Doğru kullanım:
+# Do
 i = i + 1
-
 submitted += 1
-
 x = x*2 - 1
-
 hypot2 = x*x + y*y
-
 c = (a+b) * (a-b)
-#Don't
+# Don't
 i=i+1
-
 submitted +=1
-
 x = x * 2 - 1
-
 hypot2 = x * x + y * y
-
 c = (a + b) * (a - b)
 
-#Do
+# Do
 def complex(real, imag=0.0):
     
 return magic(r=real, i=imag)
-#Don't
+# Don't
 def complex(real, imag = 0.0):
 
 return magic(r = real, i = imag)
@@ -188,10 +187,9 @@ class OddOrEvenTestSuite(unittest.TestCase):
 
 # Comments should have 1 space
 
-# PEP8 Library yi indirip PEP8 e uyumlu diye bakabilirsin: https://pypi.org/project/pep8/1.7.1/
+# PEP8 Libraryto check PEP8 compatibility
+# https://pypi.org/project/pep8/1.7.1/
 
-# Correct
-ans = x**2 + b*x + c
 
 #Don’t surround = sign with whitespaces when indicating function parameters
 def exp(base, power=2):
@@ -205,75 +203,68 @@ for name in brooklyn:
         print(‘Cool’)
         count += 1
 
-# Wrong. Always use is or is not
+# Don't. Always use is or is not
 if name != None:
     print("Not null")
-# Correct
+# Do
 if name is not None:
     print("Not null")
 
-# Lambda yerine generic function kullan. lambda kullanma
+# Use generic functions instead lambda s
+# Do
 def func(x):
     return None
 
-# Over this
+# Don't
 func = lambda x: x**2
-"""
-General Tips for Including Comments:
-Always begin the comment with a capital letter
-Comments should be complete sentences
-Update the comment as and when you update your code
-Avoid comments that state the obvious
 
-Block Comments:
-Describe the piece of code that follows them
-Have the same indentation as the piece of code
-Start with a # and a single space
+# Comments
+# Always begin the comment with a capital letter
+# Comments should be complete sentences
+# Update the comment as and when you update your code
+# Avoid comments that state the obvious. Don't overdo it
 
-Inline comments
-These are comments on the same line as the code statement
-Should be separated by at least two spaces from the code statement
-Starts with the usual # followed by a whitespace
-Do not use them to state the obvious
-Try to use them sparingly as they can be distracting
-"""
+# Block Comments
+# You cant do multiline comments in python with #. One should use """"
+# Describe the piece of code that follows them
+# Have the same indentation as the piece of code
+# Start with a # and a single space
 
-Avoid putting whitespaces immediately within brackets
-# Correct way
+# Inline Comments
+# These are comments on the same line as the code statement
+# Should be separated by at least two spaces from the code statement
+# Starts with the usual # followed by a whitespace
+# Do not use them to state the obvious
+# Try to use them sparingly as they can be distracting
+
+
+# Avoid putting whitespaces immediately within brackets
+# Do
 df[‘clean_text’] = df[‘text’].apply(preprocess)
 
-Never put whitespace before a comma, semicolon, or colon
-# Correct
+# Never put whitespace before a comma, semicolon, or colon
+# Do
 name_split = lambda x: x.split()
-# Correct
 
 Don’t include whitespaces between a character and an opening bracket
-# Correct
-print(‘This is the right way’)
-# Correct
+# Do
+print("This is the right way")
+# Do
 for i in range(5):
     name_dict[i] = input_list[i]
 
-When using multiple operators, include whitespaces only around the lowest priority operator
-# Correct
-ans = x**2 + b*x + c
 
-In slices, colons act as binary operators
-They should be treated as the lowest priority operators. Equal spaces must be included around each colon
-
-# Correct
-df_valid = df_train[lower_bound+5 : upper_bound-5]
-
-Trailing whitespaces should be avoided
-Don’t surround = sign with whitespaces when indicating function parameters
+# Trailing whitespaces should be avoided in the end of a line
+# Do not surround = sign with whitespaces when indicating function parameters
+# Do
 def exp(base, power=2):
     return base**power
 
-Always surround the following binary operators with single whitespace on either side:
-Assignment operators (=, +=, -=, etc.)
-Comparisons (==, <, >, !=, <>, <=, >=, in, not in, is, is not)
-Booleans (and, or, not)
-# Correct
+# Always surround the following binary operators with single whitespace on either side:
+    # Assignment operators (=, +=, -=, etc.)
+    # Comparisons (==, <, >, !=, <>, <=, >=, in, not in, is, is not)
+    # Booleans (and, or, not)
+# Do
 brooklyn = [‘Amy’, ‘Terry’, ‘Gina’, 'Jake']
 count = 0
 for name in brooklyn:
@@ -281,15 +272,15 @@ for name in brooklyn:
         print(‘Cool’)
         count += 1
 
-# Exceptlerde Error türünü de yaz.Boş except yazma.
-
+# Write the exception type always in error handling. Dont just use Error with the type
+# Do
 try:
     x = 1/0
 except ZeroDivisionError:
     print('Cannot divide by zero')
 
-#return her zaman birşey döndürmeli.
-# Wrong
+# All returns should be returning something. It shouldn't be blank
+# Don't
 def sample(x):
     if x > 0:
         return x+1
@@ -298,7 +289,7 @@ def sample(x):
     else:
         return x-1
 
-# Correct
+# Do
 def sample(x):
     if x > 0:
         return x+1
@@ -306,9 +297,3 @@ def sample(x):
         return None
     else:
         return x-1
-
-#Stringlerde hep endswith startswith i kullan
-If you are trying to check prefixes or suffixes in a string, use ”.startswith() and ”.endswith() instead of string slicing. These are much cleaner and less prone to errors
-# Correct
-if name.endswith('and'):
-    print('Great!')
